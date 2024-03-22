@@ -3,6 +3,11 @@ export function getUsername() {
   return user ? user : undefined;
 }
 
-export function setUsername(username: string) {
-  localStorage.setItem('user', username);
+export function setUsername(username: string | undefined) {
+  if (username == '' || username == undefined) {
+    console.log('null user');
+    localStorage.removeItem('user');
+  } else {
+    localStorage.setItem('user', username);
+  }
 }
