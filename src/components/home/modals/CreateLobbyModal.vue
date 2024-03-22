@@ -6,6 +6,11 @@
 
     <q-card-section class="q-pt-none">
       <q-input label="Lobby Name" v-model="lobbyName"></q-input>
+      <q-select
+        :options="langOptions"
+        label="Language"
+        v-model="lang"
+      ></q-select>
     </q-card-section>
 
     <q-card-actions align="right">
@@ -32,13 +37,15 @@ const props = defineProps({
   },
 });
 const lobbyName = ref('');
+const lang = ref('JS');
+const langOptions = ['JS', 'TS', 'CSharp'];
 
 const { createOnlineLobby, createOfflineLobby } = useLobbyManager();
 
 function create() {
   console.log('create');
   props.online
-    ? createOnlineLobby(lobbyName.value, 'javascript')
-    : createOfflineLobby('Test', 'javascript');
+    ? createOnlineLobby(lobbyName.value, lang.value)
+    : createOfflineLobby('Test', lang.value);
 }
 </script>
