@@ -19,6 +19,7 @@
     "@types/signalr": "^2.4.3",
     "core-js": "^3.6.5",
     "monaco-editor": "^0.45.0",
+    "monaco-editor-webpack-plugin": "^7.1.0",
     "quasar": "^2.6.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0"
